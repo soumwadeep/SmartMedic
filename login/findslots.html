@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Welcome To Smart Medic Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="dashboard.js"></script>
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<h1><a href="#" class="logo">SM</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="dashboard.html"><span class="fa fa-home"></span> Home</a>
+          </li>
+          <li>
+              <a href="#"><span class="fa fa-search"></span> Find Slots</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-check"></span> Check Symptoms</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-address-book"></span> Important Contacts</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-heartbeat"></span> Health Tips</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-comment"></span> Contact Us</a>
+          </li>
+          <li>
+            <button onclick="signOut()" id="signUp" class="btn btn-primary"><span class="fa fa-sign-out"></span>Sign Out</button>
+          </li>
+        </ul>
+        <div class="footer">
+        	<p>
+					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Smartmedic.
+					</p>
+        </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <p style="color: black;"><b>Welcome To Smart Medic Dashboard</b></p>
+          </div>
+        </nav>
+
+        <h2 class="mb-4"><b>Vaccination Slot Finder</b></h2>
+        <p style="color:black;"><b>Instructions:</b><br>
+          1.<b> Pincode:</b> It Should Be A Valid 6 Digit Number Only.<br>One Example Of Pincode Input Is: 734007 .<br>
+          2.<b> Date:</b> Please Give Your Date Input By Following This Pattern Only "dd-mm-yyyy" And Also Don't Forget To Put The Hypens In Between Day,Month And Year.<br>One Example Of Date Input Is: 19-10-2020 .</p>
+
+        <center>
+          <h4>Search For Slots By Just Entering Your Pincode And Date!</h4>
+
+            <input type="number" class="form-control" id="pin" placeholder="Enter Your Pincode">
+            <input type="text" class="form-control" minlength="10" maxlength="10" id="date" placeholder="Enter Your Date In This Format : dd-mm-yyyy"><br>
+            <button id="searchbtn" class="btn btn-primary">Search</button><br><br>
+            <h5><b>Results Will Be Shown In The Table Below:</b></h5>
+             <p style="color:black;" align="left"><b>Note:</b><br>1. If The Table Is Blank Then There Are No Slots Available On The Given Date.<br>2. If It's Written "Undefined" Then Its NIL Value.<br>3. If It's Written "False" Then Its Not For All Persons.</p>
+
+      <div class="table-responsive">
+        <table class="table table-striped" id="session">
+            <thead>
+                <tr class="bg-info">
+                    <th>Center Name</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>Date</th>
+                    <th>Dose 1 Available Slots</th>
+                    <th>Dose 2 Available Slots</th>
+                    <th>Fees</th>
+                    <th>Minimum Age</th>
+                    <th>Maximum Age</th>
+                    <th>For Any Age</th>
+                    <th>Vaccine</th>
+                    <th>Timings</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+      </div>
+      <br>
+      <a href="https://selfregistration.cowin.gov.in/" target="_blank"><button class="btn btn-primary">Book Now</button></a>
+    </div>
+    <script>
+        $("#searchbtn").click(function () {
+            var pin = $('#pin').val();
+             if (pin == '' || pin == undefined || pin<100000 || pin>999999) {
+                alert('Please Enter Valid Pincode And Date!');
+                return;
+            }
+            var today = $('#date').val();
+            $.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=" + pin +
+                "&date=" + today,
+                function (data, status) {
+                    if (status) {
+                        var sessions = data.sessions ? data.sessions : [];
+                        if (sessions) {
+                            for (var i = 0; i <= sessions.length; i++) {
+                                var classname = "info";
+                                if (i % 2 == 0) {
+                                    classname = "success"
+                                }
+                                $('#session tbody').append("<tr class=" + classname + "><td>" + sessions[i]
+                                    .name + "</td><td>" + sessions[i].address + "</td><td>" + sessions[i].pincode + "</td><td>" + sessions[i].date + "</td><td>" +
+                                    sessions[i].available_capacity_dose1 + "</td><td>" + sessions[i].capacity_dose2 + "</td><td>" + sessions[i].fee + "</td><td>" + sessions[i].min_age_limit + "</td><td>" + sessions[i].max_age_limit + "</td><td>" + sessions[i].allow_all_age + "</td><td>" + sessions[i].vaccine + "</td><td>" + sessions[i].slots + "</td></tr>")
+                            }
+                        }
+                    } else {
+                        alert('error');
+                    }
+
+                });
+        });
+    </script>
+
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

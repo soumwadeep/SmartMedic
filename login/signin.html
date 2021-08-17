@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+	<title>Log In</title>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+	<script src="signin.js"></script>
+	
+	<!--Style Here-->
+	<style>
+		body{
+		background-color: #fc5296;
+		background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%); 
+		font-family: 'Lobster Two', cursive;
+		}
+		h1{
+			
+			margin: 100px auto;
+			text-align: center;
+			color: white;
+		}
+		#formContainer{
+			background-color: white;
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),0 17px 50px 0 rgba(0, 0, 0, 0.19);
+			width: 25%;
+			height: 45%;
+			margin: 10px auto;
+		}
+		#header{
+			width: 100%;
+			height: 10px;
+			background: black;
+		}
+		#email{
+			width: 70%;
+			height: 40px;
+			display: block;
+			margin: 0 auto;
+			border: none;
+			outline: none;
+			border-bottom: 2px solid black;
+		}
+		#password{
+			width: 70%;
+			height: 40px;
+			display: block;
+			margin: 0 auto;
+			border: none;
+			outline: none;
+			border-bottom: 2px solid black;
+		}
+		#signUp{
+			background-color: #ff4d4d;
+			color: white;
+			border: none;
+			font-weight: bold;
+			padding: 15px 32px;
+			border-radius: 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 13px;
+			margin-top: 20px;
+			margin-left: 54px;
+			cursor: pointer;
+		}
+		#signIn{
+			background-color: #32ff7e;
+			color: white;
+			border: none;
+			font-weight: bold;
+			padding: 15px 32px;
+			border-radius: 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 13px;
+			cursor: pointer;
+		}
+		#signOut{
+			background-color: #ffa65;
+			color: black;
+			border: none;
+			font-weight: bold;
+			padding: 10px 32px;
+			border-radius: 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 13px;
+			margin-top: 12px;
+			margin-left: 112px;
+			cursor: pointer;
+		}
+		button{
+			font-family: 'Lobster Two', cursive;
+		};
+		}
+		button:hover{
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),0 17px 50px 0 rgba(0, 0, 0, 0.19);
+		}
+	</style>
+
+</head>
+<body>
+	<!--Form Starts Here-->
+<h1>Sign In/ Up</h1>
+	<div id="formContainer">
+	<div id="header"></div>	
+	<input type="email" placeholder="Type Your Email" id="email">
+	<input type="password" placeholder="Type Your Password" id="password">
+
+	<button onclick="signUp()" id="signUp">Sign Up</button>
+	<button onclick="signIn()" id="signIn">Sign In</button>
+	<button onclick="signOut()" id="signOut">Sign Out</button>
+</div>
+</body>
+</html>
