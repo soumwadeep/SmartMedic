@@ -1,4 +1,4 @@
-## BUILD TOMMORROW HACKATHON PROJECT
+## BUILD TOMORROW HACKATHON PROJECT
 
 # Smart-Medic
 This Website Is Related To Healthcare.
