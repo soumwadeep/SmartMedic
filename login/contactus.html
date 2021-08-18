@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Welcome To Smart Medic Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="dashboard.js"></script>
+    <style type="text/css">
+    .responsive{
+      width: 100%;
+      height: auto;
+    }
+      p{
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar" class="active">
+        <h1><a href="#" class="logo">SM</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="dashboard.html"><span class="fa fa-home"></span> Home</a>
+          </li>
+          <li>
+              <a href="findslots.html"><span class="fa fa-search"></span> Find Slots</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-check"></span> Check Symptoms</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-address-book"></span> Important Contacts</a>
+          </li>
+          <li>
+            <a href="healthtips.html"><span class="fa fa-heartbeat"></span> Health Tips</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-comment"></span> Contact Us</a>
+          </li>
+          <li>
+            <button onclick="signOut()" id="signUp" class="btn btn-primary"><span class="fa fa-sign-out"></span>Sign Out</button>
+          </li>
+        </ul>
+        <div class="footer">
+          <p style="color:white;">
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Smartmedic.
+          </p>
+        </div>
+      </nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <p><b>Welcome To Smart Medic Dashboard</b></p>
+          </div>
+        </nav>
+
+        <h2 class="mb-4"><b>Contact Us</b></h2>
+         <center><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd3qzLd78phEiZgfeoCGlgFtar4qv11Baaw7u2a2_xgY5w_7A/viewform?embedded=true" class="responsive" style="max-width:640px;height:650px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe></center>
+
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
