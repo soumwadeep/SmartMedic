@@ -22,7 +22,7 @@
     const promise = auth.createUserWithEmailAndPassword(email.value,password.value);
     //error detection and say it
     promise.catch(e => alert(e.message));
-    alert("Signed Up Successfully!");
+    alert("Please Wait While We Process Your Request, We Will Redirect You To Our Dashboard Soon After Successful Registration!");
   }
 
   //signin function
