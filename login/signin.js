@@ -33,13 +33,7 @@
     //error detection and say it
     promise.catch(e => alert(e.message));
   }
-
-  //sign out function
-  function signOut(){
-    auth.signOut();
-    alert("Signed Out Successfully!");
-  }
-  
+    
   auth.onAuthStateChanged(function(user){
     
     //If The User Is Signed In Then Only The User Will Be Redirected
