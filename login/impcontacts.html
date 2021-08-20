@@ -3,7 +3,7 @@
   <head>
   	<title>Welcome To Smart Medic Dashboard</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/icon.png" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,6 +11,15 @@
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
     <script src="dashboard.js"></script>
+    <style type="text/css">
+    .responsive{
+      width: 100%;
+      height: auto;
+    }
+      p{
+        color: black;
+      }
+    </style>
   </head>
   <body>
 		
@@ -19,7 +28,7 @@
 				<h1><a href="#" class="logo">SM</a></h1>
         <ul class="list-unstyled components mb-5">
           <li class="active">
-            <a href="#"><span class="fa fa-home"></span> Home</a>
+            <a href="dashboard.html"><span class="fa fa-home"></span> Home</a>
           </li>
           <li>
               <a href="findslots.html"><span class="fa fa-search"></span> Find Slots</a>
@@ -28,7 +37,7 @@
             <a href="#"><span class="fa fa-check"></span> Check Symptoms</a>
           </li>
           <li>
-            <a href="impcontacts.html"><span class="fa fa-address-book"></span> Important Contacts</a>
+            <a href="#"><span class="fa fa-address-book"></span> Important Contacts</a>
           </li>
           <li>
             <a href="healthtips.html"><span class="fa fa-heartbeat"></span> Health Tips</a>
@@ -41,7 +50,7 @@
           </li>
         </ul>
         <div class="footer">
-        	<p>
+        	<p style="color:white;">
 					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Smartmedic.
 					</p>
         </div>
@@ -57,20 +66,13 @@
               <i class="fa fa-bars"></i>
               <span class="sr-only">Toggle Menu</span>
             </button>
-            <p style="color: black;"><b>Welcome To Smart Medic Dashboard</b></p>
+            <p><b>Welcome To Smart Medic Dashboard</b></p>
           </div>
         </nav>
 
-        <h2 class="mb-4"><b>Home</b></h2>
-        <p style="color: black;"><b>This Is Your Home Page.Here You Will Find All The Recommended Instructions To Follow.</b></p>
-        <p>Follow This Guide To Know More About Our Dashboard Items:</p>
-        <p><b>1.Home Page:</b>This Is The Place Where You Will Get Our Dashboard's Step-By-Step Guide.</p>
-        <p><b>2.Find Slots:</b>This Is The Place Where You Will Able To Check The Available Slots Of Vaccination Centres Within Your District Without Any Requirement Of OTP.</p>
-        <p><b>3.Check Symptoms:</b>This Is The Place From Where You Will Able To Detect Your Disease By Typing Your Symptoms.We Support Most Of The Common Diseases Detection.</p>
-        <p><b>4.Important Contacts:</b>This Is The Place From Where You Will Get All The Important Phone Numbers Including Emergency Ambulance Numbers.</p>
-        <p><b>5.Health Tips:</b>This Is The Place Where You Will Get Some Health Related Articles Which Will Be Useful For You To Stay Fit.</p>
-        <p><b>6.Contact Us:</b>This Is The Place From Where You Can Contact Our Team For Any Queries.We Are Present 24X7 For Helping Our Users. </p>
-        <p><b>7.Sign Out:</b>This Is The Place From Where You Can Sign Out From Our Dashboard And Get Redirected To Sign In Portal.</p>
+        <h2 class="mb-4"><b>Important Contacts</b></h2>
+        <p style="color:black;">This Document Will Keep Updating Automatically To Provide You The Latest Datas.</p>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRuM_m8PNFpNh98PT9QqRvYVu1Cv2w3KwfC1iFgXR_dCVf0-6F1AwXSZIYC9S7Rgos-kCR9cFDTeHqf/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%;height:100%;" frameborder="0" marginheight="0" marginwidth="0"></iframe>
       </div>
 		</div>
     <script src="js/jquery.min.js"></script>
