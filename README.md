@@ -1,4 +1,4 @@
-## BUILD TOMORROW HACKATHON PROJECT
+## OCTA HACKS 4.0 HACKATHON PROJECT
 
 # Smart-Medic
 This Website Is Related To Healthcare.
