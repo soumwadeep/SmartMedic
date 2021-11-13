@@ -19,7 +19,3 @@ Keeping our surroundings neat and clean keeps us fit. We need to ensure that wat
 
 Exercising regularly helps to keep us fit and prevent diseases. A healthy and hygienic life helps to strengthen our body and make us immune to diseases; by adopting healthy practices are not just benefit individuals but the society as well. We need to spread awareness of hygienic practices. A healthy community helps a nation grow more robust.
 
-# Deep Dhar
-Creating The AI Powered Weavy ChatBot For Our Website.
-Code:
-// Write Here
