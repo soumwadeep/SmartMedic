@@ -6,5 +6,4 @@ In This Website An User Can Easily Check Their Symptoms And Also Search And Book
 
 # Contributors
 Soumwadeep Guha,
-Deep Dhar And
 Shreshtha Das.
